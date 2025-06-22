@@ -1,6 +1,7 @@
-import { useState , useEffect } from 'react'
-import './App.css'
-import Weather from '../src/components/Weather'
+// src/App.jsx
+import { useState, useEffect } from 'react';
+import Weather from './components/Weather';
+import './index.css';
 
 const API_KEY = import.meta.env.VITE_WEATHER_API_KEY;
 
@@ -22,9 +23,9 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-100 to-blue-300 flex items-center justify-center">
+    <div className="min-h-screen bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 flex items-center justify-center px-4">
       {loading ? (
-        <p className="text-xl">Loading weather...</p>
+        <p className="text-white text-xl font-semibold animate-pulse">Fetching Weather...</p>
       ) : (
         <Weather weather={weather} />
       )}
@@ -32,4 +33,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
